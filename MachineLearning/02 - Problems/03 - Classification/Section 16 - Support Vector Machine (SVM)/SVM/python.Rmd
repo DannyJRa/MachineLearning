@@ -1,0 +1,30 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Source: https://blog.rstudio.com/2018/03/26/reticulate-r-interface-to-python/
+
+```{r}
+library(reticulate)
+```
+
+
+```{python}
+a = 3
+b = 5
+a
+```
+
+```{python}
+print(a + b)
+```
+
+```{r}
+py$a
+```
