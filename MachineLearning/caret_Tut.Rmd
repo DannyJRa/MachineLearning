@@ -5,6 +5,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 # Time of computation below each chunk
+#test run
 knitr::knit_hooks$set(timeit = local({
   now = NULL
   function(before, options) {
