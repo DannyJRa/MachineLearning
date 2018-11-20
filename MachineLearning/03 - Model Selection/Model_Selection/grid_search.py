@@ -40,7 +40,7 @@ accuracies.std()
 
 #Test compute time
 #Test compute time V2
-#Test compute time V23
+#Test compute time V234
 ## Applying Grid Search to find the best model and the best parameters
 from sklearn.model_selection import GridSearchCV
 parameters = [{'C': [1, 10, 100, 1000], 'kernel': ['linear']},
