@@ -28,8 +28,26 @@ knitr::knit_hooks$set(timeit = local({
 #Caching of all chunks
 knitr::opts_chunk$set(cache=TRUE)
 ```
+Replicate the block
+```{r, include=FALSE)}
+## Timing in a loop and analyzing the results later using tic.log().
+tic.clearlog()
+for (x in 1:10)
+{
+   tic(x)
+   Sys.sleep(1)
+   toc(log = TRUE, quiet = TRUE)
+}
+log.txt <- tic.log(format = TRUE)
+log.lst <- tic.log(format = FALSE)
+tic.clearlog()
 
 
+timings <- unlist(lapply(log.lst, function(x) x$toc - x$tic))
+mean(timings)
+# [1] 1.001
+writeLines(unlist(log.txt))
+```
 
 ```{r, include=FALSE)}
 ## Timing in a loop and analyzing the results later using tic.log().
